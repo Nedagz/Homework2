@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TodoApp from "./components/todo-app";
+import Toggle from "./context/theme-provider";
+import "./assets/style/style.css";
 
 function App() {
+  const [isDark, setIsDark] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="box-border m-0 p-0 flex flex-col justify-center items-center  w-[500px] h-screen" data-theme={isDark ? "dark" : "light"}>
+      <Toggle isChecked={isDark}
+        handleChange={() => setIsDark(!isDark)}/>
+        <TodoApp />
+     
     </div>
   );
 }

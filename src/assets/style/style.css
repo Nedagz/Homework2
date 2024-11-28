@@ -1,0 +1,9 @@
+[data-theme = "dark"] {
+   @apply   bg-zinc-800 text-white
+
+}
+
+[data-theme = "light"] {
+    @apply bg-white text-black
+}
+
